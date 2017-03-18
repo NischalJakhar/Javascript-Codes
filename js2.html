@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Img</title>
+
+    <script>
+        window.onload = function () {
+
+            var e1=document.getElementById('para');
+            var button = document.getElementById('button');
+            var textbox = document.getElementById('textbox');
+
+            button.onclick = function () {
+
+                var d = new Date();
+            if (d.getHours() > 18) {
+                e1.innerHTML = "Good Evening " + textbox.value;
+               // document.write("Good Evening" + textbox.value);
+            }
+            else if (d.getHours() > 12) {
+                e1.innerHTML = "Good Afternoon " + textbox.value;
+               // document.write("Good Afternoon " + textbox.value);
+            }
+            else if (d.getHours() > 0) {
+              //  document.write("Good Morning " + textbox.value);
+                e1.innerHTML = "Good Morning " + textbox.value;
+            }
+            else
+                e1.innerHTML = "Namaste " + textbox.value;
+            //document.write("Namaste " + textbox.value);
+
+        }
+        }
+    </script>
+
+</head>
+<body>
+
+<img src="images/namaste.jpg" height="300px" width="300px">
+<input type="text" placeholder="What's your name: " id="textbox">
+<input type="button" value="Send" id="button">
+
+<p id="para" style="color: red" align="center">
+
+</p>
+</body>
+</html>
