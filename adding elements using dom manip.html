@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding Elements</title>
+</head>
+<body>
+<ul id="ul">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+
+    <script>
+        var e1 = document.createElement('li');
+        var newText = document.createTextNode('five');
+        e1.appendChild(newText);
+        var position = document.getElementsByTagName('ul')[0];
+        position.appendChild(e1);
+    </script>
+</ul>
+</body>
+</html>
