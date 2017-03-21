@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REmove Element from Domtree</title>
+</head>
+<body>
+<ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+
+</ul>
+<script>
+    var removeE1 = document.getElementsByTagName('li')[3];
+    var containerE1 = removeE1.parentNode;
+    containerE1.removeChild(removeE1);
+</script>
+</body>
+</html>
