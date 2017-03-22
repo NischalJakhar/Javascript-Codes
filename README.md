@@ -1,2 +1,2 @@
 # Javascript-Codes
-Epic things in Javascript
+Simple(imp.) things in Javascript
