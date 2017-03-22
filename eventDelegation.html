@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="c06a.css" />
+</head>
+<body>
+<div id="page">
+    <h1>List King</h1>
+    <h2>Buy groceries</h2>
+    <ul id="shoppingList">
+        <li class="complete"><a href="itemDone.php?id=1"><em>Headphones</em>(JBL)</a></li>
+        <li class="complete"><a href="itemDone.php?id=2">Hard Disk</a></li>
+        <li class="complete"><a href="itemDone.php?id=3">DVD Linkin Park</a></li>
+        <li class="complete"><a href="itemDone.php?id=4">Books</a></li>
+    </ul>
+</div>
+<script>
+    function itemDone(e) {
+        var target = e.target;
+        var elParent = target.parentNode;
+        var elGrandparent = target.parentNode.parentNode;
+        elGrandparent.removeChild(elParent);
+
+        if(e.preventDefault){e.preventDefault();}else {e.returnValue = false;}
+
+
+    }
+    var el = document.getElementById('shoppingList');
+    el.addEventListener('click',function (e){itemDone(e);},false);
+
+</script>
+</body>
+</html>
