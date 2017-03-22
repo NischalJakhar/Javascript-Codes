@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+<form method="post" action="http://www.example.org/register">
+    <label for = "username">Create a username:</label>
+    <input type="text" id="username">
+    <div id="feedback">
+
+    </div>
+    <label for="password" >Create a password:</label>
+    <input type="password" id="password">
+
+    <input type="submit" value="Sign Up!">
+</form>
+<script>
+
+    var elUsername = document.getElementById('username');
+    var elMsg = document.getElementById('feedback');
+
+    checkUsername = function (number) {
+
+        if(elUsername.value.length<number){
+            elMsg.textContent = 'Username must be' +' '+ number +' ' + 'char or more';
+        }else{
+            elMsg.textContent = '';
+        }
+    }
+
+    var element = document.getElementById('username');
+    element.addEventListener('blur',function(){checkUsername(5);},false);
+
+</script>
+
+</body>
+</html>
