@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>focusblur</title>
+    <style>
+        div{
+            background-color: #6cc0ac;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            padding: 0 60px 65px 60px;}
+
+        input[type='text'], input[type='password'] {
+            background-color: #999;
+            color: white;
+            font-family: 'Oswald', 'Futura', sans-serif;
+            font-size: 24px;
+            width: 96%;
+            padding: 4px 6px;
+            border: 1px solid #999;
+            border-radius: 8px;}
+
+        input[type='submit'], a.add {
+            background-color: #cb6868;
+            color: #f3dad1;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 10px;
+            margin-top: 10px;
+            float: right;
+            font-size: 18px;
+            text-decoration: none;
+            text-transform: uppercase;}
+
+
+    </style>
+</head>
+<body>
+<div id="page">
+<h1>Sign Up</h1>
+<form method="post" action="http://www.example.org/register">
+    <label for = "username">Create a username:</label>
+    <input type="text" id="username">
+    <div id="feedback">
+
+    </div>
+    <label for="password" >Create a password:</label>
+    <input type="password" id="password">
+
+    <input type="submit" value="Sign Up!">
+</form>
+</div>
+
+<script>
+
+    function checkUser() {
+        var username = el.value;
+        if (username.length < 5) {
+            elMsg.innerHTML = 'Not long enough yet....';}
+        else{
+            elMsg.innerHTML = '';
+        }
+    }
+
+
+    function tipUsername() {
+        elMsg.innerHTML = 'Username must be at least 5 characters';
+    }
+    var el = document.getElementById('username');
+    var elMsg = document.getElementById('feedback');
+
+    el.addEventListener('focus',tipUsername,false);
+    el.addEventListener('blur',checkUser,false);
+
+
+</script>
+
+</body>
+</html>
